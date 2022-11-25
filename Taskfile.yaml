@@ -1,0 +1,33 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+
+tasks:
+  run:
+    cmds:
+      - go run cmd/server/main.go
+
+  lint:
+    cmds:
+      - golangci-lint run
+
+  env:
+    cmds:
+      - source .env
+
+  default:
+    cmds:
+      - go build -o ./bin/server cmd/server/main.go
+
+  gen:
+    preconditions:
+      - which spectral
+    cmds:
+      - spectral lint ./api/swagger.yaml; echo
+      - oapi-codegen -generate types -package http ./api/swagger.yaml > ./internal/ports/driving/http/types.gen.go
+
+
+  prerequisites:
+    - npm install -g @stoplight/spectral-cli

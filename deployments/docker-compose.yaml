@@ -1,0 +1,39 @@
+version: '3.1'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+  app:
+    container_name: app
+    build:
+      context: ../
+      dockerfile: ./deployments/Dockerfile
+      args:
+        - GITLAB_USER=${GITLAB_USER}
+        - GITLAB_PASSWORD=${GITLAB_PASSWORD}
+    environment:
+      APP_HTTP_SERVER_ADDRESS: 0.0.0.0
+      APP_HTTP_SERVER_PORT: 8080
+      APP_USERREPOSITORY_IMPLEMENTATION: mongo
+      APP_USERREPOSITORY_CONFIG: mongodb://root:example@mongo:27017/
+    ports:
+      - "8080:8080"
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/

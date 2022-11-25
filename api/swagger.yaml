@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: User-api
+  description: User-api
+  version: 1.0.0
+  contact:
+    name: contact
+servers:
+  - url: 'http://localhost:8080'
+    description: Local server
+tags:
+  - name: users
+    description: Users management
+paths:
+  /users:
+    get:
+      summary: Get all users
+      operationId: getAllUsers
+      description: Get all users
+      tags:
+        - users
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '500':
+          description: Internal Server Error
+
+    post:
+      summary: Create a new user
+      operationId: createUser
+      description: Create a new user
+      tags:
+        - users
+      requestBody:
+        description: User to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUser'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+components:
+  schemas:
+    CreateUser:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          format: email
+
+    User:
+      type: object
+      required:
+        - id
+        - email
+      properties:
+        id:
+          type: string
+          format: uuid
+          x-go-type: uuid.UUID
+          x-go-type-import:
+            path: github.com/google/uuid
+        email:
+          type: string
+          format: email
+  
