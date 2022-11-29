@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/core/domain"
 	"time"
 )
 

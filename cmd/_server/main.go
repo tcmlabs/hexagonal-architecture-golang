@@ -9,10 +9,10 @@ import (
 	"time"
 
 	"tcmlabs.fr/hexagonal_architecture_golang/config"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/_http"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user/mongo"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/core/domain"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/primary_adapter/_http"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/secondary_adapter/repositories/user"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/secondary_adapter/repositories/user/mongo"
 )
 
 const (
@@ -75,7 +75,7 @@ func NewUserRepository(ctx context.Context, implRequest string, cfg string) (use
 			return nil, err
 		}
 
-		log.Printf("mongo user repositories set : %+#v", userRepo)
+		log.Printf("mongo cinema repositories set : %+#v", userRepo)
 		return userRepo, nil
 	default:
 		err := fmt.Errorf("unknown implementation request : %s", implRequest)

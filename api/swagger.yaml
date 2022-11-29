@@ -32,9 +32,9 @@ paths:
           description: Internal Server Error
 
     post:
-      summary: Create a new user
+      summary: Create a new cinema
       operationId: createUser
-      description: Create a new user
+      description: Create a new cinema
       tags:
         - users
       requestBody:

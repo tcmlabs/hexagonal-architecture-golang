@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain/services"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/movie"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/core/domain/services"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/secondary_adapter/repositories/movie"
 )
 
 var rootCmd = &cobra.Command{

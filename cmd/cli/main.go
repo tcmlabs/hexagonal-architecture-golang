@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/cli"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/primary_adapter/cli"
 )
 
 // cobra cli that create and get all users

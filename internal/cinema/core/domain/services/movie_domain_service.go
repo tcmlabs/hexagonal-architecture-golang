@@ -1,8 +1,8 @@
 package services
 
 import (
-	services "tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/ports/secondary"
+	services "tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/core/domain"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/cinema/core/ports/secondary"
 )
 
 type MovieDomainService struct {
