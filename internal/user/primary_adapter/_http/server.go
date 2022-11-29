@@ -1,4 +1,4 @@
-package http
+package _http
 
 import (
 	"context"
@@ -61,9 +61,9 @@ func NewServer(cfg *ServerCfg, userService services.User) Server {
 }
 
 func (s *Server) Start() error {
-	log.Printf("server starting on %s", s.httpServer.Addr)
+	log.Printf("_server starting on %s", s.httpServer.Addr)
 	if err := s.httpServer.ListenAndServe(); err != nil {
-		err := fmt.Errorf("failed to start server: %w", err)
+		err := fmt.Errorf("failed to start _server: %w", err)
 		log.Print(err)
 		return err
 	}

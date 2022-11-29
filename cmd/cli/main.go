@@ -1,44 +1,19 @@
 package main
 
-// cobra cli that create and get all users
-
 import (
-	"github.com/spf13/cobra"
+	"log"
+	"os"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/cli"
 )
 
-var rootCmd = &cobra.Command{
-	Use:   "app",
-	Short: "app is a CLI for the user management",
-}
-
-var createUserCmd = &cobra.Command{
-	Use:   "create",
-	Short: "Create a user",
-	Long:  `Create a user with the given name and email`,
-	Run: func(cmd *cobra.Command, args []string) {
-		//TODO implement me
-		panic("implement me")
-	},
-}
-
-var getAllUsersCmd = &cobra.Command{
-	Use:   "get",
-	Short: "Get all users",
-	Long:  `Get all users`,
-	Run: func(cmd *cobra.Command, args []string) {
-		//TODO implement me
-		panic("implement me")
-	},
-}
+// cobra cli that create and get all users
 
 func main() {
-	if err := rootCmd.Execute(); err != nil {
+	if os.Getenv("TMBD_TOKEN") == "" {
+		log.Fatalln("Please set env variable TMBD_TOKEN")
+	}
+	cmd := cli.InitCli()
+	if err := cmd.Execute(); err != nil {
 		panic(err)
 	}
-
-}
-
-func init() {
-	rootCmd.AddCommand(createUserCmd)
-	rootCmd.AddCommand(getAllUsersCmd)
 }

@@ -19,7 +19,7 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 go build -o server ./cmd/server/main.go
+RUN CGO_ENABLED=0 go build -o _server ./cmd/_server/main.go
 
 FROM gcr.io/distroless/static AS final
 

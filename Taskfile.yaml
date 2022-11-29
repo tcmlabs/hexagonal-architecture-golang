@@ -7,7 +7,7 @@ vars:
 tasks:
   run:
     cmds:
-      - go run cmd/server/main.go
+      - go run cmd/_server/main.go
 
   lint:
     cmds:
@@ -19,14 +19,14 @@ tasks:
 
   default:
     cmds:
-      - go build -o ./bin/server cmd/server/main.go
+      - go build -o ./bin/_server cmd/_server/main.go
 
   gen:
     preconditions:
       - which spectral
     cmds:
       - spectral lint ./api/swagger.yaml; echo
-      - oapi-codegen -generate types -package http ./api/swagger.yaml > ./internal/ports/driving/http/types.gen.go
+      - oapi-codegen -generate types -package _http ./api/swagger.yaml > ./internal/ports/driving/_http/types.gen.go
 
 
   prerequisites:

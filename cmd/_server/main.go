@@ -10,7 +10,7 @@ import (
 
 	"tcmlabs.fr/hexagonal_architecture_golang/config"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/http"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/_http"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user/mongo"
 )
@@ -29,7 +29,7 @@ func main() {
 
 	log.Printf("configuration set : %+#v", cfg)
 
-	serverCfg, err := http.NewServerCfg(cfg.Http.Server.Address, uint16(cfg.Http.Server.Port))
+	serverCfg, err := _http.NewServerCfg(cfg.Http.Server.Address, uint16(cfg.Http.Server.Port))
 	if err != nil {
 		os.Exit(1)
 	}
@@ -41,7 +41,7 @@ func main() {
 
 	userSvc := services.NewUserServices(userRepo)
 
-	server := http.NewServer(serverCfg, userSvc)
+	server := _http.NewServer(serverCfg, userSvc)
 
 	go func() {
 		if err := server.Start(); err != nil {

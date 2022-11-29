@@ -7,7 +7,7 @@ info:
     name: contact
 servers:
   - url: 'http://localhost:8080'
-    description: Local server
+    description: Local _server
 tags:
   - name: users
     description: Users management
