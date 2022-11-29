@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"log"
 
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/core"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/x/mongo/driver/connstring"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
 )
 
 const (

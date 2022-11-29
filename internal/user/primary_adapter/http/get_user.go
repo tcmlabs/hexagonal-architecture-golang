@@ -6,7 +6,7 @@ import (
 
 	openapi_types "github.com/deepmap/oapi-codegen/pkg/types"
 	"github.com/google/uuid"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/core/services"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/services"
 )
 
 func getUser(userSvc services.User) func(w http.ResponseWriter, r *http.Request) {

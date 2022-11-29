@@ -3,7 +3,7 @@ package user
 import (
 	"context"
 
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/core"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core"
 )
 
 type Repository interface {

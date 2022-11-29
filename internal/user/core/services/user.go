@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/google/uuid"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/core"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
 )
 
 type User interface {

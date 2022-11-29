@@ -8,11 +8,11 @@ import (
 	"os/signal"
 	"time"
 
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/config"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/core/services"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/primary_adapter/http"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
-	"gitlab.com/tclaudel_ateme/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user/mongo"
+	"tcmlabs.fr/hexagonal_architecture_golang/config"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/services"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/http"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user/mongo"
 )
 
 const (
