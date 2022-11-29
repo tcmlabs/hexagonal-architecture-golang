@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/services"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
 )
 
 const (

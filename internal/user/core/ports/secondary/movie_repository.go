@@ -1,7 +1,9 @@
 package secondary
 
-import "tcmlabs.fr/hexagonal_architecture_golang/internal/user/core"
+import (
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
+)
 
 type MovieRepository interface {
-	FindAllMovies() ([]core.Movie, error)
+	FindAllMovies() ([]services.Movie, error)
 }

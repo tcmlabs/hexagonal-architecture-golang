@@ -1,4 +1,4 @@
-package core
+package services
 
 type Movie struct {
 	Genres           []string

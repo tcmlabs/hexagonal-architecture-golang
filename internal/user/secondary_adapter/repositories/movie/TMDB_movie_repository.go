@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
 	"time"
 )
 
@@ -86,7 +86,7 @@ func (tmbdMovieRepository *TMBDMovieRepository) retrieveMovieGenres() (map[int]s
 }
 
 // FindAllMovies TODO: Return non adapter specific errors
-func (tmbdMovieRepository *TMBDMovieRepository) FindAllMovies() ([]core.Movie, error) {
+func (tmbdMovieRepository *TMBDMovieRepository) FindAllMovies() ([]services.Movie, error) {
 	topRatedMovies, err := tmbdMovieRepository.retrieveTopRatedMovies()
 	if err != nil {
 		return nil, err
@@ -97,9 +97,9 @@ func (tmbdMovieRepository *TMBDMovieRepository) FindAllMovies() ([]core.Movie, e
 		return nil, err
 	}
 
-	var coreMovies []core.Movie
+	var coreMovies []services.Movie
 	for _, movie := range topRatedMovies {
-		coreMovie := core.Movie{
+		coreMovie := services.Movie{
 			Genres:           nil,
 			OriginalLanguage: movie.OriginalLanguage,
 			OriginalTitle:    movie.OriginalTitle,

@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"tcmlabs.fr/hexagonal_architecture_golang/config"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/services"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/domain"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/http"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user/mongo"
