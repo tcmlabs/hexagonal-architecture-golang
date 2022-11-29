@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/x/mongo/driver/connstring"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user"
 )
 
 const (

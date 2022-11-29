@@ -1,7 +1,7 @@
 package mock
 
 import (
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user"
 )
 
 func NewUserRepository() user.Repository {

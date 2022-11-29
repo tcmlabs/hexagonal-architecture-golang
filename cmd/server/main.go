@@ -11,8 +11,8 @@ import (
 	"tcmlabs.fr/hexagonal_architecture_golang/config"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core/services"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/primary_adapter/http"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user/mongo"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user/mongo"
 )
 
 const (
@@ -75,7 +75,7 @@ func NewUserRepository(ctx context.Context, implRequest string, cfg string) (use
 			return nil, err
 		}
 
-		log.Printf("mongo user repository set : %+#v", userRepo)
+		log.Printf("mongo user repositories set : %+#v", userRepo)
 		return userRepo, nil
 	default:
 		err := fmt.Errorf("unknown implementation request : %s", implRequest)

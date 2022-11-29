@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/core"
-	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repository/user"
+	"tcmlabs.fr/hexagonal_architecture_golang/internal/user/secondary_adapter/repositories/user"
 )
 
 type User interface {
